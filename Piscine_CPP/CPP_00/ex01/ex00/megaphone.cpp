@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Users.class.hpp                                    :+:      :+:    :+:   */
+/*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: harar <harar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/02 16:20:26 by harar             #+#    #+#             */
-/*   Updated: 2015/11/02 16:50:45 by harar            ###   ########.fr       */
+/*   Created: 2015/11/02 14:09:59 by harar             #+#    #+#             */
+/*   Updated: 2015/11/02 15:22:41 by harar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef USERS_CLASS_H
-# define USERS_CLASS_H
-<
+#include <iostream>
+#include <string>
 
-class Users.class
+void	convert(std::string &s)
 {
-public:
-	Users();
-	~Users();
+	for (size_t i = 0; i < s.size(); i++)
+	{
+		s[i] = std::toupper(s[i]);
+	}
+}
 
-private:
+int main (int argc, char **argv){
 
-	string _first_name,_last name, _nickname, _login, _postal, _address, _email, _phone_number, _birthday_date, _favorite_meal, _underwear, _color, _darkest secret;
+	if (argc > 1)
+	{
+		for (int i = 1; i < argc; ++i)
+		{	
+			std::string p = argv[i];
+			convert(p);
+			std::cout << p;
+		}
+	}
+	else 
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
 
-
-
-};
+	std::cout << std::endl;
+	return 0;
+}
